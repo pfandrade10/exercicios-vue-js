@@ -23,13 +23,13 @@
 <style>
     .sidebar-panel {
         overflow-y: auto;
-        background-color: #130f40;
+        background-color: #2c3e50;
         position: fixed;
         left: 0;
-        top: 0;
-        height: 100vh;
+        bottom: 0;
+        height: calc(100% - 150px);
         z-index: 999;
-        padding: 3rem 20px 2rem 20px;
+        padding: 0px;
         width: 250px;
     }
 </style>
