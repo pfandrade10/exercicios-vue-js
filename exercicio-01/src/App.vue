@@ -1,25 +1,41 @@
+  
 <template>
-  <SideBar>
-    <ul class="sidebar-panel-nav">
-       <li><a href="#home">Home</a></li>
-       <li><a href="#about">About</a></li>
-       <li><a href="#contact">Contact</a></li>
-     </ul>
-  </SideBar>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+<div class='container'>
+  <header>
+    <Header />
+  </header>
+  <nav>
+    <Navbar />
+  </nav>
+  <main class='wrapper'>
+      <Article />
+      <Aside :items="sections"/>
+  </main>
+
+</div>
+  
+  
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-import SideBar from './components/SideBar.vue'
-
+import Header from './components/Header';
+import Navbar from './components/Navbar';
+import Article from './components/Article';
+import Aside from './components/Sidebar';
 export default {
   name: 'App',
-  components: {
-    HelloWorld,
-    SideBar
+  components:{
+    Header,
+    Navbar,
+    Article,
+    Aside,
+  },
+  data(){
+    return {
+      sections: ['option 1', 'option 2', 'option 3', 'option 4', 'option 5', 'option 6', 'option 7', 'option 8', 'option 9', 'option 10']
+    }
   }
+  
 }
 </script>
 
@@ -28,30 +44,12 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  color: #1e2022;
+  margin: 0 auto;
+  max-width: 1000px;
 }
- ul.sidebar-panel-nav {
-   list-style-type: none;
-   margin: 0px;
-   padding: 0px;
-   text-align: left;
- }
-
- ul.sidebar-panel-nav > li > a {
-   color: #fff;
-   text-decoration: none;
-   font-size: 1.5rem;
-   display: block;
-   padding-bottom: 0.5em;
- }
-
- li:hover{
-   background-color: #374e64;
- }
-
- a{
-   padding: 12px 15px;
- }
+.wrapper{
+  display: grid;
+  grid-template-columns: 70% 30%;
+}
 </style>
